@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Логін{% endblock %}
+
+{% block content %}
+<h2>Логін</h2>
+
+<!-- Відображення помилки -->
+{% if error %}
+<div class="error-message">
+    {{ error }}
+</div>
+{% endif %}
+
+<form method="POST" action="/login">
+    <label for="email">Електронна пошта:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <button type="submit">Увійти</button>
+    <p>Немає акаунта? <a href="/register">Створити акаунт</a></p>
+</form>
+{% endblock %}

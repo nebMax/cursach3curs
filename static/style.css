@@ -1,0 +1,496 @@
+/* Основні стилі */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #eaeaea;
+  background: url('/static/images/background.jpg') no-repeat center center fixed;
+  background-size: cover; /* Зробить фон повністю адаптивним */
+}
+
+/* Основний контент */
+main {
+  padding: 20px;
+  text-align: center;
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: rgba(60, 60, 60, 0.9); /* Напівпрозорий фон */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+main h2 {
+  color: #eaeaea;
+  font-size: 28px;
+}
+
+main p {
+  color: #b8b8b8;
+  line-height: 1.6;
+}
+
+/* Шапка */
+header {
+  background-color: #3c3c3c;
+  padding: 20px 0;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+header nav ul {
+  list-style-type: none;
+  margin: 20px 0 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #b8b8b8;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+header nav ul li a:hover {
+  background-color: #505050;
+  color: #fff;
+}
+
+/* Кнопки */
+button {
+  background-color: #505050;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: #666666;
+}
+
+/* Footer */
+footer {
+  background-color: #3c3c3c;
+  color: #b8b8b8;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.account-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.logout-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.logout-button:hover {
+  background-color: #c0392b;
+}
+
+
+
+
+/* Стиль для списку голосувань */
+.vote-list {
+  list-style: none; /* Прибираємо стандартні маркери списку */
+  padding: 0;
+  margin: 20px 0;
+}
+
+.vote-list li {
+  margin-bottom: 15px;
+}
+
+.vote-list a {
+  text-decoration: none; /* Прибираємо підкреслення */
+  color: #eaeaea;
+  background-color: #505050;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.vote-list a:hover {
+  background-color: #666666;
+  color: #ffffff;
+}
+
+.poll-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* Відступ між кнопками */
+  margin-top: 20px;
+}
+
+.poll-button {
+  background-color: #505050;
+  color: #eaeaea;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  width: 200px; /* Фіксована ширина кнопки */
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.poll-button:hover {
+  background-color: #666666;
+  color: #ffffff;
+}
+
+table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+table th, table td {
+  padding: 10px;
+  border: 1px solid #505050;
+}
+
+table th {
+  background-color: #505050;
+  color: white;
+}
+
+table td {
+  background-color: #3c3c3c;
+  color: #eaeaea;
+}
+
+.success-container {
+  background-color: rgba(76, 175, 80, 0.1); /* Світло-зелений відтінок */
+  border: 2px solid #4caf50; /* Зелений колір для рамки */
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тінь для додаткової глибини */
+}
+
+.success-container h2 {
+  color: #4caf50; /* Основний зелений колір */
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.success-container p {
+  color: #ffffff;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.success-container .button {
+  display: inline-block;
+  background-color: #4caf50;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.success-container .button:hover {
+  background-color: #388e3c; /* Темніший зелений колір при наведенні */
+}
+
+.back-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #505050; /* Темний фон */
+  color: #eaeaea; /* Світлий текст */
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Тінь кнопки */
+}
+
+.back-button:hover {
+  background-color: #666666; /* Світліший фон при наведенні */
+  transform: translateY(-2px); /* Ефект підняття */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); /* Тінь тексту */
+}
+
+
+
+
+/* Меню (три смужки) */
+.menu-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-button .bar {
+  width: 100%;
+  height: 4px;
+  background-color: #eaeaea;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar {
+  position: fixed; /* Фіксоване розташування */
+  top: 0;
+  left: -300px; /* Початково захована */
+  width: 300px;
+  height: 100%; /* Висота на весь екран */
+  background-color: #3c3c3c;
+  color: #eaeaea;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column; /* Вертикальне вирівнювання */
+  overflow: hidden; /* Запобігає випиранню вмісту */
+}
+
+
+.sidebar.open {
+  left: 0; /* Відкрита панель */
+}
+
+.sidebar-header {
+  padding: 10px;
+  background-color: #505050;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+/* Контент бічної панелі */
+.sidebar-content {
+  padding: 20px;
+}
+
+.sidebar-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-content ul li {
+  margin-bottom: 10px;
+  color: #b8b8b8;
+}
+
+.sidebar-content ul li:hover {
+  color: white;
+  cursor: pointer;
+}
+
+/* Стиль для кнопки в бічному меню */
+.view-polls-button {
+  display: block;
+  margin: 10px 0;
+  padding: 10px 20px;
+  background-color: #505050;
+  color: #eaeaea;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.view-polls-button:hover {
+  background-color: #666666;
+}
+
+/* Футер бічної панелі */
+.sidebar-footer {
+  margin-top: auto; /* Вирівнює вниз */
+  width: 100%; /* Забезпечує повну ширину панелі */
+  padding: 15px;
+  background-color: #505050;
+  color: #eaeaea;
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid #3c3c3c;
+  box-sizing: border-box; /* Усуває додаткові відступи */
+  overflow: hidden; /* Усуває випирання */
+}
+
+
+.sidebar-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-footer ul li a {
+  color: #eaeaea;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.sidebar-footer ul li a:hover {
+  color: #ffffff;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  header nav ul {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  main {
+      padding: 15px;
+      margin: 20px;
+  }
+
+  button {
+      width: 100%;
+  }
+}
+
+
+.user-polls {
+  background-color: #2d2d2d;
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.user-polls h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.polls-section {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #3a3a3a;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.polls-section h3 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: #bdbdbd;
+}
+
+.polls-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.polls-section ul li {
+  margin: 10px 0;
+}
+
+.polls-section ul li a {
+  text-decoration: none;
+  color: #4caf50;
+  font-size: 1.1em;
+  transition: color 0.3s;
+}
+
+.polls-section ul li a:hover {
+  color: #76ff03;
+}
+
+.polls-section p {
+  font-size: 1em;
+  color: #bdbdbd;
+}
+
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid red;
+  background-color: #ffe6e6;
+  border-radius: 5px;
+}
+
+.info-message {
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.delete-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.delete-button:hover {
+  background-color: #ff1a1a;
+}
+
+
+

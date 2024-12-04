@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="user-polls">
+    <h2>Ваші опитування</h2>
+
+    <div class="polls-section">
+        <h3>Створені вами</h3>
+        {% if created_polls %}
+            <ul>
+                {% for poll in created_polls %}
+                    <li><a href="/view/{{ poll.poll_id }}">{{ poll.question }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>У вас ще немає створених опитувань.</p>
+        {% endif %}
+    </div>
+
+    <div class="polls-section">
+        <h3>Опитування, в яких ви брали участь</h3>
+        {% if participated_polls %}
+            <ul>
+                {% for poll in participated_polls %}
+                    <li><a href="/view/{{ poll.poll_id }}">{{ poll.question }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Ви ще не брали участь у жодному опитуванні.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+
+
+<div class="user-polls">
+    <h2>Ваші опитування</h2>
+
+    <div class="polls-section">
+        <h3>Створені вами</h3>
+        {% if created_polls %}
+            <ul>
+                {% for poll in created_polls %}
+                    <li><a href="/view/{{ poll.poll_id }}">{{ poll.question }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>У вас ще немає створених опитувань.</p>
+        {% endif %}
+    </div>
+
+    <div class="polls-section">
+        <h3>Опитування, в яких ви брали участь</h3>
+        {% if participated_polls %}
+            <ul>
+                {% for poll in participated_polls %}
+                    <li><a href="/view/{{ poll.poll_id }}">{{ poll.question }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Ви ще не брали участь у жодному опитуванні.</p>
+        {% endif %}
+    </div>
+</div>

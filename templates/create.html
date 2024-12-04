@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Створити голосування{% endblock %}
+
+{% block content %}
+<h2>Створити нове голосування</h2>
+<form action="/create_poll" method="post">
+    <label for="question">Питання:</label><br>
+    <input type="text" id="question" name="question" required><br><br>
+
+    <label for="options">Варіанти відповідей (через кому):</label><br>
+    <input type="text" id="options" name="options" required><br><br>
+
+    <button type="submit">Створити</button>
+</form>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Результати голосування{% endblock %}
+
+{% block content %}
+<h2>Результати голосування</h2>
+<h3>{{ poll.question }}</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Варіант</th>
+          <th>Кількість голосів</th>
+          <th>Хто голосував</th>
+      </tr>
+  </thead>
+  <tbody>
+      {% for result in results %}
+      <tr>
+          <td>{{ result['option_text'] }}</td>
+          <td>{{ result['vote_count'] }}</td>
+          <td>{{ result['voters'] or 'Немає голосів' }}</td>
+      </tr>
+      {% endfor %}
+  </tbody>
+</table>
+
+
+<a href="/vote" class="back-button">Назад до списку голосувань</a>
+{% endblock %}

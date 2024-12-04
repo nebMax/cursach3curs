@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Голосування{% endblock %}
+
+{% block content %}
+<h2>{{ poll.question }}</h2>
+<form action="/vote/{{ poll.poll_id }}" method="post">
+    {% for option in options %}
+    <div>
+        <input type="radio" id="option{{ option.option_id }}" name="option" value="{{ option.option_id }}" required>
+        <label for="option{{ option.option_id }}">{{ option.option_text }}</label>
+    </div>
+    {% endfor %}
+    <button type="submit">Проголосувати</button>
+</form>
+{% endblock %}

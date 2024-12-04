@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Провести голосування{% endblock %}
+
+{% block content %}
+<h2>Обрати голосування</h2>
+<ul class="vote-list">
+    {% for poll in polls %}
+    <li>
+        <a href="/vote/{{ poll.poll_id }}">{{ poll.question }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Редагувати голосування{% endblock %}
+
+{% block content %}
+<h2>Редагувати голосування</h2>
+<form action="/update_poll/{{ poll.id }}" method="post">
+    <label for="question">Питання:</label>
+    <input type="text" id="question" name="question" value="{{ poll.question }}" required><br><br>
+
+    {% for option in poll.options %}
+    <label for="option-{{ option.id }}">Варіант {{ loop.index }}:</label>
+    <input type="text" id="option-{{ option.id }}" name="options" value="{{ option.text }}" required>
+    <input type="hidden" name="option_ids" value="{{ option.id }}"><br><br>
+    {% endfor %}
+
+    <button type="submit">Зберегти зміни</button>
+</form>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Редагувати існуюче голосування{% endblock %}
+
+{% block content %}
+<h2>Редагувати існуюче голосування</h2>
+<div class="poll-container">
+    {% for poll in polls %}
+    <form action="{{ url_for('edit_poll', poll_id=poll.poll_id) }}" method="get">
+        <button class="poll-button" type="submit">{{ poll.question }}</button>
+    </form>
+    {% endfor %}
+</div>
+{% endblock %}

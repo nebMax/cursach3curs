@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Перегляд існуючих голосувань{% endblock %}
+
+{% block content %}
+<h2>Перегляд існуючих голосувань</h2>
+<div class="poll-container">
+    {% for poll in polls %}
+    <form action="/view/{{ poll.poll_id }}" method="get">
+        <button class="poll-button" type="submit">{{ poll.question }}</button>
+    </form>
+    {% endfor %}
+</div>
+{% endblock %}

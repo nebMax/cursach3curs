@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Система голосування{% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <header>
+      <div class="menu-button" onclick="toggleMenu()">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+      </div>
+      <h1>Система онлайн-голосування</h1>
+      <nav>
+          <ul>
+              <li><a href="/">Головна</a></li>
+              <li><a href="/create">Створити голосування</a></li>
+              <li><a href="/vote">Провести голосування</a></li>
+              <li><a href="/edit">Редагувати голосування</a></li>
+              <li><a href="/view">Перегляд голосувань</a></li>
+          </ul>
+      </nav>
+  </header>
+
+  <!-- Бічна панель -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+        <h2>Меню</h2>
+        <button onclick="closeSidebar()">Закрити</button>
+    </div>
+    <div class="sidebar-content">
+        <div class="account-info">
+            <p>Акаунт: {{ session.get('username', 'Гість') }}</p>
+            {% if session.get('user_id') %}
+            <form action="/logout" method="post" class="logout-form">
+                <button type="submit" class="logout-button">Вийти</button>
+            </form>
+            {% endif %}
+        </div>
+        {% if session.get('user_id') %}
+        <p>Ваші опитування:</p>
+        <a href="/user-polls"><button>Переглянути</button></a>
+        {% else %}
+        <a href="/login"><button>Увійти</button></a>
+        <a href="/register"><button>Зареєструватися</button></a>
+        {% endif %}
+    </div>
+
+    <!-- Новий блок із посиланнями -->
+    <div class="sidebar-footer">
+        <h3>Корисні посилання</h3>
+        <ul>
+            <li><a href="/contact-us">Зв'язатися з нами</a></li>
+            <li><a href="/about">Про нас</a></li>
+            <li><a href="/faq">Часті питання</a></li>
+        </ul>
+    </div>
+</div>
+
+  <main>
+      {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+      <p>© 2024 Система голосування |NDGMKS</p>
+  </footer>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
